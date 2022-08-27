@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:islami/hadeth_tab.dart';
-import 'package:islami/my_colors.dart';
-import 'package:islami/quran_tab.dart';
-import 'package:islami/radio_tab.dart';
-import 'package:islami/sabaha_tab.dart';
+import 'package:islami/home/hadeth/hadeth_tab.dart';
+import 'package:islami/home/quran/quran_tab.dart';
+import 'package:islami/home/radio/radio_tab.dart';
+import 'package:islami/home/sabaha/sabaha_tab.dart';
+
 
 class HomeScreen extends StatefulWidget {
-static const String routeName = 'Home';
-
+static const String routeName = 'home';
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
 int SelectedTabIcons = 0 ;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,17 +22,14 @@ int SelectedTabIcons = 0 ;
         )
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: Text('Islami', style: TextStyle(color: Colors.black,fontSize: 30
-                ,fontWeight: FontWeight.w500),
+          title: Text('Islami',
           ),
         ),
         bottomNavigationBar:Theme(
-          data: Theme.of(context).copyWith(canvasColor: MyColors.PrimryColors),
+          data: Theme.of(context).copyWith(canvasColor: Theme.of(context).primaryColor
+              ),
           child: BottomNavigationBar(
             currentIndex: SelectedTabIcons,
             onTap: (index){
@@ -43,9 +37,7 @@ int SelectedTabIcons = 0 ;
                 SelectedTabIcons = index ;
               });
             },
-            showUnselectedLabels: true,
-            selectedItemColor: Colors.black,
-            selectedIconTheme: IconThemeData(color: Colors.black),
+
             items: [
               BottomNavigationBarItem(icon:ImageIcon(AssetImage
                 ('assets/images/radio.png'),) ,
