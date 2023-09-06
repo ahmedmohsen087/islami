@@ -37,7 +37,7 @@ class _HadethDeatilsState extends State<HadethDeatils> {
               child: Text(
                 args.content,
                 textDirection: TextDirection.rtl,
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context).textTheme.headline5,
               )
             ),
           ),

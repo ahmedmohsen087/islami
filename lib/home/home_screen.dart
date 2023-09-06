@@ -3,6 +3,8 @@ import 'package:islami/home/hadeth/hadeth_tab.dart';
 import 'package:islami/home/quran/quran_tab.dart';
 import 'package:islami/home/radio/radio_tab.dart';
 import 'package:islami/home/sabaha/sabaha_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/home/settings/settings_tab.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -24,7 +26,7 @@ int SelectedTabIcons = 0 ;
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Islami',
+          title: Text(AppLocalizations.of(context)!.app_title,
           ),
         ),
         bottomNavigationBar:Theme(
@@ -41,16 +43,18 @@ int SelectedTabIcons = 0 ;
             items: [
               BottomNavigationBarItem(icon:ImageIcon(AssetImage
                 ('assets/images/radio.png'),) ,
-                  label:'Radio' ),
+                  label:AppLocalizations.of(context)!.radio_title ),
               BottomNavigationBarItem(icon:ImageIcon(AssetImage
                 ('assets/images/sebha_blue.png')) ,
-                  label:'Sabaha' ),
+                  label:AppLocalizations.of(context)!.saabha_title ),
               BottomNavigationBarItem(icon:ImageIcon(AssetImage
                 ('assets/images/Group 6.png')) ,
-                  label:'Hadeth' ),
+                  label:AppLocalizations.of(context)!.hadeth_title ),
               BottomNavigationBarItem(icon:ImageIcon(AssetImage
                 ('assets/images/moshaf_blue.png')) ,
-                  label:'Quran' ),
+                  label:AppLocalizations.of(context)!.quran_title ),
+              BottomNavigationBarItem(icon:Icon(Icons.settings) ,
+                  label:AppLocalizations.of(context)!.settings_title ),
             ],
           ),
         ),
@@ -58,5 +62,5 @@ int SelectedTabIcons = 0 ;
       ),
     );
   }
-  List<Widget> Tabs = [RadioTab(),SabahaTab(),HadethTab(),QuranTab()];
+  List<Widget> Tabs = [RadioTab(),SabahaTab(),HadethTab(),QuranTab(),SettingsTab()];
 }
