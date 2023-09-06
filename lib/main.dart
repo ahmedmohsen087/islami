@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var seetingProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme:MyTheme.LightTheme,
       themeMode: seetingProvider.CurrentTheme,
       initialRoute: HomeScreen.routeName,

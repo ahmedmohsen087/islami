@@ -65,9 +65,7 @@ class _SabahaTabState extends State<SabahaTab> {
 
         ),
         SizedBox(height: 10,)
-
       ],
-
     );
   }
 
